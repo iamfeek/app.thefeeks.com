@@ -1,5 +1,6 @@
 import { DropdownMenu, DropdownItem } from 'reactstrap';
 import { useCurrentUser } from '../../lib/hooks';
+import Link from 'next/link';
 
 export const LoggedInDropdownMenu = () => {
   const [, { mutate }] = useCurrentUser();
@@ -13,9 +14,11 @@ export const LoggedInDropdownMenu = () => {
 
   return (
     <DropdownMenu right>
-      <DropdownItem>
-        Option 1
-      </DropdownItem>
+      <Link href="/sizes" passHref>
+        <DropdownItem>
+          Sizes
+        </DropdownItem>
+      </Link>
       <DropdownItem>
         Option 2
       </DropdownItem>

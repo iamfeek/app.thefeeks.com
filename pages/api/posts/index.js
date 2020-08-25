@@ -21,7 +21,7 @@ handler.get(async (req, res) => {
     .sort({ createdAt: -1 })
     .limit(parseInt(req.query.limit, 10) || 10)
     .toArray();
-  res.send({ posts });
+  res.send(posts);
 });
 
 handler.post(async (req, res) => {
