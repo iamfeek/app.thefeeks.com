@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useCurrentUser } from '../lib/hooks';
 
-export default ({ children }) => {
+const Layout = ({ children }) => {
   const [user, { mutate }] = useCurrentUser();
   const handleLogout = async () => {
     await fetch('/api/auth', {
@@ -194,3 +194,5 @@ export default ({ children }) => {
     </>
   );
 };
+
+export default Layout;
